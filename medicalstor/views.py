@@ -10,7 +10,7 @@ from rest_framework.authentication import TokenAuthentication
 class CompanyViewSet(viewsets.ViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly, ]
 
-    # authentication_classes = [TokenAuthentication, ]
+    authentication_classes = [TokenAuthentication, ]
 
     def list(self, request):
         company = Company.objects.all()
@@ -42,8 +42,8 @@ class CompanyViewSet(viewsets.ViewSet):
 
 
 class CompanyBankViewSet(viewsets.ViewSet):
-    # permission_classes = [IsAuthenticatedOrReadOnly, ]
-    # authentication_classes = [TokenAuthentication, ]
+    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    authentication_classes = [TokenAuthentication, ]
 
     def create(self, request):
         try:
@@ -82,6 +82,8 @@ class CompanyBankViewSet(viewsets.ViewSet):
 
 # custome filter by url
 class CompanyNameViewSet(generics.ListAPIView):
+    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    authentication_classes = [TokenAuthentication, ]
     serializer_class = CompanySerializers
 
     def get_queryset(self):
@@ -93,8 +95,8 @@ class CompanyNameViewSet(generics.ListAPIView):
 
 # MedicineSerializers
 class MedicineViewSet(viewsets.ViewSet):
-    # permission_classes = [IsAuthenticatedOrReadOnly, ]
-    # authentication_classes = [TokenAuthentication, ]
+    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    authentication_classes = [TokenAuthentication, ]
 
     def create(self, request):
         try:
@@ -171,13 +173,19 @@ class MedicineViewSet(viewsets.ViewSet):
 
 
 class EmployeeViewset(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    authentication_classes = [TokenAuthentication, ]
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializers
 
-class CustomerViewset(viewsets.ModelViewSet):
+class CustomerViewset(viewsets.ModelViewSet):    
+    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    authentication_classes = [TokenAuthentication, ]
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializers
 
 class CustomerRequestViewset(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly, ]
+    authentication_classes = [TokenAuthentication, ]
     queryset = CustomerRequest.objects.all()
     serializer_class = CustomerRequestSerializers
