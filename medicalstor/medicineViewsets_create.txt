@@ -1,0 +1,31 @@
+{
+    "name": "rrrrrrr",
+    "medical_typ": "mm",
+    "buy_price": "mm",
+    "sell_price": "mm",
+    "c_gst": "mm",
+    "s_gst": "mm",
+    "batch_no": "mm",
+    "shelf_no": "mm",
+    "expire_date": "2020-12-03",
+    "mfg_date": "2020-12-03",
+    "description": "fdfdfd",
+    "in_stock_total": 43,
+    "qty_in_strip": 434,
+    "added_on": "2020-12-03T07:49:47.002346Z",
+    "company_id": 1,
+    "medicine_details":[
+        {
+            "salt_name":"test 1",
+            "salt_qty":"test 1",
+            "salt_qty_type":"test 1",
+            "description":"test 1"
+        },
+        {
+            "salt_name":"test 2",
+            "salt_qty":"test 2",
+            "salt_qty_type":"test 2",
+            "description":"test 2"
+        }
+    ]
+}
